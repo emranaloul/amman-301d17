@@ -128,7 +128,7 @@ let objectLit = function() {
 console.log(objectLit());
 
 
-let sumAndProduct = function(a, b) {
+let sumAndProduct = (a, b) => {
   let sum = a + b;
   let product = a * b;
   return [sum, product];
@@ -138,7 +138,7 @@ let sumAndProduct = function(a, b) {
 console.log(sumAndProduct(3, 9));
 
 
-let message = function(name) {
+let message = (name) => {
   return `Hello, ${name}!`;
 };
 
@@ -174,12 +174,14 @@ console.log(joe.greeting());
 
 
 
-Student.courseName = function() {
+Student.courseName = () => {
   return 'This student is enrolled in Code 301.';
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 console.log(Student.courseName());
+
+// made the function including any "this" to a usual function form instead of arrow function
 
 
 
@@ -199,8 +201,8 @@ console.log(joe.scopeArrow());
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
-// undefined
+// this refere to the object joe itself
 // 2. What is "this" when joe.scopeArrow() is invoked?
-// window 
+// // this refere to the window object 
 // 3. Explain why "this" is different when an arrow function is used.
 // the arrow function cannot be used with the constructor because its "this" gives the value of the global window
